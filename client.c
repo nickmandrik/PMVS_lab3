@@ -12,7 +12,6 @@
 
 int main()
 {
-	// 1
 	char filepath[MAX_FILEPATH_SIZE];
 	int bytes_received = 0, socket_id = 0;
 	char buffer[BUF_SIZE];
