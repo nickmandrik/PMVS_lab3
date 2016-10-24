@@ -113,14 +113,6 @@ int main(int argc, char* argv[])
 			continue;
 		}
 #ifdef THREAD
-		for (i = 0; i < MAX_THREAD_COUNT; ++i)
-			if ((!threads[i]) || (pthread_kill(threads[i], 0) != ESRCH))
-				break;
-
-		if (i >= MAX_THREAD_COUNT) {
-			printf("No free threads.\n");
-			continue;
-		}
 
 		if (pthread_create(&threads[i], NULL, thread_function, (void*)(intptr_t)client_id)) {
 			printf("Thread wasn't created.\n");
